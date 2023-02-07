@@ -1,39 +1,17 @@
+import 'react-native-gesture-handler'
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-
-
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { useNavigation } from '@react-navigation/native';
+import Routes from './src/routes/index';
 
-import AccessScreen from './src/screens/AccessScreen';
-import Login from './src/screens/Login';
-
-
-const Stack = createNativeStackNavigator()
+// import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen 
-          name='AccessScreen' 
-          component={AccessScreen} 
-          options={{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen 
-          name='Login' 
-          component={Login} 
-          options={{
-            headerShown: false
-          }}
-        />
-
-      </Stack.Navigator>
+      <StatusBar backgroundColor='#FFF' barStyle='dark-content'/>
+      <Routes/>
     </NavigationContainer>
   );
 }

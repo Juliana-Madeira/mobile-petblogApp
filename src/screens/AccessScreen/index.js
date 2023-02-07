@@ -8,7 +8,7 @@ export default function AccessScreen() {
   const navigation = useNavigation()
 
   const toLogin = () => {
-    console.log('apertei botao para login');
+    console.log('apertei botao para tela de login');
     navigation.navigate('Login')
   }
 
@@ -35,7 +35,7 @@ export default function AccessScreen() {
         <Text style={styles.textBtn}>Outras formas</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.linkSignup}>
+      <TouchableOpacity style={styles.linkSignup} onPress={() => navigation.navigate('SignUp')}>
         <Text>Não tem uma conta? <Text style={styles.signup}>Cadastre-se</Text></Text>
       </TouchableOpacity>
 
